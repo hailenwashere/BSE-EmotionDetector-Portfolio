@@ -1,5 +1,5 @@
 ﻿# Emotion Detection with Machine Learning
-This will serve as a brief description of your project. Limit this to three sentences because it can become overly long at that point. This copy should draw the user in and make she/him want to read more.
+(temp - subject to future changes) This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to categorize the emotion of a face into one of **n** categories. This is done with machine learning and a live webcam to feed in data. 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
