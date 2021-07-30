@@ -1,5 +1,5 @@
 ﻿# Emotion Detection with Machine Learning
-(temp - subject to future changes) This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to categorize the emotion of a face into one of **n** categories. This is done with machine learning and a live webcam to feed in data. 
+(temp - subject to future changes) This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to categorize the emotion of a face into one of **n** categories. This is done with a support vector classifier trained on the **Olivetti faces dataset** and a live webcam to feed in data. 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
