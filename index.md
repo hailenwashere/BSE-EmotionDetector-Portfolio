@@ -17,6 +17,25 @@ Next was starting on the code for this project. I finished preprocessing the [Fa
 For example, I initially ran my code on Google Colab, which, unfortunately could not save a fully preprocessed version of my dataset in the form of a pickle file. 
 
 ![Colab SS](https://github.com/hailenwashere/BSE-EmotionDetector-Portfolio/blob/gh-pages/colab%20bar.gif)
+
+As seen, running my code on Colab was too slow and limited RAM stopped this process at around 70%. Thus, I moved my code to be locally hosted and used Jupyter Notebooks. There was a marginal improvement in the runtime of this saving process as the rate of completion basically tripled (up to around 100 iterations/second), but this allowed other problems to show, such as the saving of objects instead of strings for my labels. 
+
+```python
+ for file in tqdm(os.listdir(curr_path)): # iterates through files in ./images/
+    #         if file[-3:] in {'jpg', 'png'}: # if file is a jpg or png, not needed
+                try:
+                    im = imread(os.path.join(curr_path, file))
+                    im = resize(im, (width, height)) # every image we have is 350x350, not needed but good to keep
+                    
+                    index = csv_data.index[csv_data['image']==file][0]
+                    data['label'].append(csv_data.iloc[index]['emotion']) # appending label from dataframe we created early on, used to connect label and image
+                    
+                    data['filename'].append(file) # image name
+                    data['image'].append(im) # image data
+                    
+                except Exception:
+
+```
   
 # Second Milestone - Training the Model
 
