@@ -1,5 +1,5 @@
 ﻿# Emotion Detection with Machine Learning
-(temp - subject to future changes) This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to categorize the emotion of a face into one of 8 categories. This is done with HOG-SVM (Histogram of Oriented Gradients and Support Vector Machines) trained on the [Facial Expressions Dataset by muxspace](https://github.com/muxspace/facial_expressions) and a live webcam to feed in data. 
+This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to categorize the emotion of a face into one of 8 categories. This is done with HOG-SVM (Histogram of Oriented Gradients and Support Vector Machines) trained on the [Facial Expressions Dataset by muxspace](https://github.com/muxspace/facial_expressions) and a live webcam to feed in data. 
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
