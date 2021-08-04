@@ -5,7 +5,6 @@ This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to cat
 |:--:|:--:|:--:|:--:|
 | Helen Feng | Evergreen Valley High School | Computer Science | Incoming Senior
 
-![Headstone Image](https://bluestampengineering.com/wp-content/uploads/2016/05/improve.jpg)
 
 # First Milestone - Setting Up and Preprocessing
 The first milestone of my project was setting up the Raspberry Pi. After downloading the Raspberry Pi imager from the Raspberry Pi [website](https://www.raspberrypi.org/software/), I used a SD card reader to download Raspbian, the latest OS for Raspberry Pis, on the micro sd. With the OS and other necessary parts such as the HDMI cable and the heatsinks, I was able to boot up my Raspberry Pi.
