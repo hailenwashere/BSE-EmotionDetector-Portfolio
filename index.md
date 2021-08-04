@@ -18,7 +18,7 @@ For example, I initially ran my code on Google Colab, which, unfortunately could
 
 ![Colab SS](https://github.com/hailenwashere/BSE-EmotionDetector-Portfolio/blob/gh-pages/colab%20bar.gif)
 
-As seen, running my code on Colab was too slow and limited RAM stopped this process at around 70%. Thus, I moved my code to be locally hosted and used Jupyter Notebooks. There was a marginal improvement in the runtime of this saving process as the rate of completion basically tripled (up to around 100 iterations/second), but this allowed other problems to show, such as the saving of objects instead of strings for my labels. 
+As seen in the gif of the save data bar, running my code on Colab was too slow and limited RAM provided by Google Colab stopped this process at around 70%. Thus, I moved my code to be locally hosted and used Jupyter Notebooks. There was a marginal improvement in the runtime of this saving process as the rate of completion basically tripled (up to around 100 iterations/second), but this allowed other problems to show, such as the saving of objects instead of strings for my labels. 
 
 ```python
  for file in tqdm(os.listdir(curr_path)): # iterates through files in ./images/
