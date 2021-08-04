@@ -6,12 +6,6 @@ This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to cat
 | Helen Feng | Evergreen Valley High School | Computer Science | Incoming Senior
 
 ![Headstone Image](https://bluestampengineering.com/wp-content/uploads/2016/05/improve.jpg)
-  
-# Final Milestone
-
-
-# Second Milestone - Training the Model
-
 
 # First Milestone - Setting Up and Preprocessing
 The first milestone of my project 
@@ -19,3 +13,11 @@ The first milestone of my project
 [image]
   
 I also finished preprocessing the [Facial Expressions Dataset](https://github.com/muxspace/facial_expressions.git), which categorizes over 13,000 pictures into 8 expressions. 
+
+  
+# Second Milestone - Training the Model
+
+
+# Final Milestone
+
+
