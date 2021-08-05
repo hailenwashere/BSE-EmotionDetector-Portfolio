@@ -17,7 +17,7 @@ For example, I initially ran my code on Google Colab, which, unfortunately could
 
 ![Colab SS](https://github.com/hailenwashere/BSE-EmotionDetector-Portfolio/blob/gh-pages/colab%20bar.gif)
 
-As seen in the gif of the save data bar, running my code on Colab was too slow and limited RAM provided by Google Colab stopped this process at around 70%. Thus, I moved my code to be locally hosted and used Jupyter Notebooks. There was a marginal improvement in the runtime of this saving process as the rate of completion basically tripled (up to around 100 iterations/second), but this allowed other problems to show, such as the saving of objects instead of strings for my labels. 
+As seen in the gif of the save data bar, running my code on Colab was too slow and limited RAM provided by Google Colab stopped this process at around 70%. Thus, I moved my code to be locally hosted and used Jupyter Notebooks. There was a marginal improvement in the runtime of this saving process as the rate of completion basically tripled (up to around 100 iterations/second), but this allowed other problems to show. After a lot of debugging, the final save data method can be seen below. 
 
 ![JN SS](https://github.com/hailenwashere/BSE-EmotionDetector-Portfolio/blob/gh-pages/jupyterbar.gif)
 
@@ -39,7 +39,10 @@ def saveData(src, pklname, csv_path, width=350, height=None):
   csv_data = pd.read_csv(csv_path) # create dataframe to match labels and images
 
   for i in range(len(csv_data)):
-      csv_data.iloc[i]['emotion'] = csv_data.iloc[i]['emotion'].lower()
+    csv_data.iloc[i]['emotion'] = csv_data.iloc[i]['emotion'].lower()
+  
+  if c.shape[2] != 1:
+    im = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
 
   for subdir in os.listdir(src): # src should be '.'
     if subdir == 'images': # grabs images/
