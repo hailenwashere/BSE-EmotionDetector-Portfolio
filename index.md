@@ -5,6 +5,10 @@ This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to cat
 |:--:|:--:|:--:|:--:|
 | Helen Feng | Evergreen Valley High School | Computer Science | Incoming Senior
 
+# Final Milestone
+
+# Second Milestone - Training the Model
+
 
 # First Milestone - Setting Up and Preprocessing
 The first milestone of my project was setting up the Raspberry Pi. After downloading the Raspberry Pi imager from the Raspberry Pi [website](https://www.raspberrypi.org/software/), I used a SD card reader to download Raspbian, the latest OS for Raspberry Pis, on the micro sd. With the OS and other necessary parts such as the HDMI cable and the heatsinks, I was able to boot up my Raspberry Pi.
@@ -17,7 +21,7 @@ For example, I initially ran my code on Google Colab, which, unfortunately could
 
 ![Colab SS](https://github.com/hailenwashere/BSE-EmotionDetector-Portfolio/blob/gh-pages/colab%20bar.gif)
 
-As seen in the gif of the save data bar, running my code on Colab was too slow and limited RAM provided by Google Colab stopped this process at around 70%. Thus, I moved my code to be locally hosted and used Jupyter Notebooks. There was a marginal improvement in the runtime of this saving process as the rate of completion basically tripled (up to around 100 iterations/second), but this allowed other problems to show. After a lot of debugging, the final save data method can be seen below. 
+As seen in the gif of the save data bar, running my code on Colab was too slow and limited RAM provided by Google Colab stopped this process at around 70%. Thus, I moved my code to be locally hosted and used Jupyter Notebooks. There was a marginal improvement in the runtime of this saving process as the rate of completion basically tripled (up to around 100 iterations/second), but this allowed other problems to show, like inconsistent images. After a lot of debugging, the final save data method can be seen below, which properly saved the entire dataset into a pickle file.
 
 ![JN SS](https://github.com/hailenwashere/BSE-EmotionDetector-Portfolio/blob/gh-pages/jupyterbar.gif)
 
@@ -70,8 +74,4 @@ def saveData(src, pklname, csv_path, width=350, height=None):
   return
 ```
   
-# Second Milestone - Training the Model
-
-
-# Final Milestone
 
