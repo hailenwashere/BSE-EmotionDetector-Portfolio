@@ -21,7 +21,7 @@ For example, I initially ran my code on Google Colab, which, unfortunately could
 
 ![Colab SS](https://github.com/hailenwashere/BSE-EmotionDetector-Portfolio/blob/gh-pages/colab%20bar.gif)
 
-As seen in the gif of the save data bar, running my code on Colab was too slow and limited RAM provided by Google Colab stopped this process at around 70%. Thus, I moved my code to be locally hosted and used Jupyter Notebooks. There was a marginal improvement in the runtime of this saving process as the rate of completion basically tripled (up to around 100 iterations/second), but this allowed other problems to show, like inconsistent images. After a lot of debugging, the final save data method can be seen below, which properly saved the entire dataset into a pickle file.
+As seen in the gif of the save data bar, running my code on Colab was too slow and limited RAM provided by Google Colab stopped this process at around 70%. Thus, I moved my code to be locally hosted and used Jupyter Notebooks. There was a marginal improvement in the runtime of this saving process as the rate of completion basically tripled (up to around 100 iterations/second), but this allowed other problems to show, like saving inconsistent images and not properly saving strings in the dataframe. After a lot of debugging, the final save data method can be seen below, which properly saved the entire dataset into a pickle file.
 
 ![JN SS](https://github.com/hailenwashere/BSE-EmotionDetector-Portfolio/blob/gh-pages/jupyterbar.gif)
 
