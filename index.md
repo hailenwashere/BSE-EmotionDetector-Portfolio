@@ -73,11 +73,5 @@ def saveData(src, pklname, csv_path, width=350, height=None):
   f.close()
   return
 ```
-<object width="425" height="350">
-  <param name="movie" value="https://youtu.be/gA0wkDz3eC8" />
-  <param name="wmode" value="transparent" />
-  <embed src="http://www.youtube.com/user/wwwLoveWatercom?v=BTRN1YETpyg"
-         type="application/x-shockwave-flash"
-         wmode="transparent" width="425" height="350" />
-</object>
+[![Milestone 1](https://img.youtube.com/vi/gA0wkDz3eC8/0.jpg)](https://youtu.be/gA0wkDz3eC8)
 
