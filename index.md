@@ -8,12 +8,53 @@ This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to cat
 # Final Milestone
 
 # Second Milestone - Training the Model
+The second  milestone of my project was creating the actual model. At first, I wanted to just detect whether or not someone was smiling for simplicity. However, as the dataset I used had 8 total different emotions that were labelled, I aimed to create an emotion detector. 
 
+To do this, I used sklearn to first split my dataset into train and test sets. I leave 20% of the images for testing.
+
+```python
+from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(
+    data['image'], 
+    data['label'], 
+    test_size=0.2, 
+    shuffle=True,
+    random_state=21
+)
+```
+
+To train the model, I needed to distinguish features for my model to detect. In order to achieve this, I used a Histogram Oriented Gradient/Support Vector Machine (HOG-SVM) approach. HOG is used for feature extraction and will reduce the size of the image to processable chunks.
+
+```python
+from sklearn.linear_model import SGDClassifier
+from sklearn.model_selection import cross_val_predict
+from sklearn.preprocessing import StandardScaler, Normalizer
+import skimage
+ 
+# create an instance of each transformer
+# grayify = RGB2GrayTransformer()
+hogify = HogTransformer(
+    pixels_per_cell=(14, 14), 
+    cells_per_block=(2,2), 
+    orientations=9, 
+    block_norm='L2-Hys'
+)
+scalify = StandardScaler()
+print('instances')
+
+# call fit_transform on each transform converting X_train step by step
+X_train_hog = hogify.fit_transform(X_train)
+print('hogified')
+X_train_prepared = scalify.fit_transform(X_train_hog)
+print('scalified')
+ 
+print(X_train_prepared.shape)
+```
+The model creation was rather straightforward from here. I used sklearn's SGD Classifier object (which fit a linear SVM by default) and reached an accuracy of 80%! This was rather impressive, since the data set I used was very uneven in distributiion of varying emotions. 
 
 # First Milestone - Setting Up and Preprocessing
 The first milestone of my project was setting up the Raspberry Pi. After downloading the Raspberry Pi imager from the Raspberry Pi [website](https://www.raspberrypi.org/software/), I used a SD card reader to download Raspbian, the latest OS for Raspberry Pis, on the micro sd. With the OS and other necessary parts such as the HDMI cable and the heatsinks, I was able to boot up my Raspberry Pi.
-  
-[image]
   
 Next was starting on the code for this project. I finished preprocessing the [Facial Expressions Dataset](https://github.com/muxspace/facial_expressions.git), which categorizes over 13,000 pictures into 8 expressions after a long time due to complications with my process. 
 
