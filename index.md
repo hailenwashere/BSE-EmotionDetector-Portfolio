@@ -5,9 +5,42 @@ This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to cat
 |:--:|:--:|:--:|:--:|
 | Helen Feng | Evergreen Valley High School | Computer Science | Incoming Senior
 
-# Final Milestone
+# Final Milestone - Training and Testing
+The final milestone of this project was training, testing, and (attempting) to optimize the model. The model creation was rather straightforward from processing. I used sklearn's SGD Classifier object (which fit a linear SVM by default) and reached an accuracy of 80%! This was rather impressive, since the data set I used was very uneven in distributiion of varying emotions. 
 
-# Second Milestone - Training the Model
+![Accuracy_Cell]()
+
+Using a confusion matrix, we can see that the model is accurate for most images, as the most predictions appear on the main diagonal of the matrix. However, given the uneven distribution of the emotions, it is clear that only two of the emotions (happiness and neutrality) show up on the confusion matrix. 
+
+![Confusion_Matrix]()
+
+The model worked as I'd hoped, as seen below correctly identifying an image to be anger.
+
+![Results_Img]()
+
+I originally wanted to optimize the model and then upload it onto the Raspberry Pi, but due to some unknown errors (for now) I was unable to create the Pipeline. My computer kept crashing trying to run the following cell:
+
+```python
+from sklearn.pipeline import Pipeline
+from sklearn import svm
+ 
+HOG_pipeline = Pipeline([
+    ('grayify', RGB2GrayTransformer()),
+    ('hogify', HogTransformer(
+        pixels_per_cell=(14, 14), 
+        cells_per_block=(2, 2), 
+        orientations=9, 
+        block_norm='L2-Hys')
+    ),
+    ('scalify', StandardScaler()),
+    ('classify', SGDClassifier(random_state=42, max_iter=1000, tol=1e-3))
+])
+ 
+clf = HOG_pipeline.fit(X_train, y_train)
+print('Percentage correct: ', 100*np.sum(clf.predict(X_test) == y_test)/len(y_test))
+```
+
+# Second Milestone - More Processing
 The second  milestone of my project was creating the actual model. At first, I wanted to just detect whether or not someone was smiling for simplicity. However, as the dataset I used had 8 total different emotions that were labelled, I aimed to create an emotion detector. 
 
 To do this, I used sklearn to first split my dataset into train and test sets. I leave 20% of the images for testing.
@@ -51,7 +84,6 @@ print('scalified')
  
 print(X_train_prepared.shape)
 ```
-The model creation was rather straightforward from here. I used sklearn's SGD Classifier object (which fit a linear SVM by default) and reached an accuracy of 80%! This was rather impressive, since the data set I used was very uneven in distributiion of varying emotions. 
 
 # First Milestone - Setting Up and Preprocessing
 The first milestone of my project was setting up the Raspberry Pi. After downloading the Raspberry Pi imager from the Raspberry Pi [website](https://www.raspberrypi.org/software/), I used a SD card reader to download Raspbian, the latest OS for Raspberry Pis, on the micro sd. With the OS and other necessary parts such as the HDMI cable and the heatsinks, I was able to boot up my Raspberry Pi.
