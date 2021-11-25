@@ -8,15 +8,15 @@ This project utilizes OpenCV and scikit learn on a Raspberry Pi 3 Model B to cat
 # Final Milestone - Training and Testing
 The final milestone of this project was training, testing, and (attempting) to optimize the model. The model creation was rather straightforward from processing. I used sklearn's SGD Classifier object (which fit a linear SVM by default) and reached an accuracy of 80%! This was rather impressive, since the data set I used was very uneven in distributiion of varying emotions. 
 
-![Accuracy_Cell]()
+![Accuracy_Cell](Accuracy_Cell.png)
 
 Using a confusion matrix, we can see that the model is accurate for most images, as the most predictions appear on the main diagonal of the matrix. However, given the uneven distribution of the emotions, it is clear that only two of the emotions (happiness and neutrality) show up on the confusion matrix. 
 
-![Confusion_Matrix]()
+![Confusion_Matrix](Confusion_Matrix.png)
 
 The model worked as I'd hoped, as seen below correctly identifying an image to be anger.
 
-![Results_Img]()
+![Results_Img](Results_Img.png)
 
 I originally wanted to optimize the model and then upload it onto the Raspberry Pi, but due to some unknown errors (for now) I was unable to create the Pipeline. My computer kept crashing trying to run the following cell:
 
